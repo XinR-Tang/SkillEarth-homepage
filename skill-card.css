@@ -1,0 +1,15 @@
+/* Complete, readable anatomy of a released SkillEarth skill. */
+.skill-preview-grid{grid-template-columns:1fr 1.25fr;gap:12px}
+.skill-preview-grid section,.skill-preview-grid section+section{padding:13px 14px;border:1px solid #d8e8f5;border-radius:10px;background:rgba(248,252,255,.86)}
+.skill-preview-grid section+section{border-left:1px solid #d8e8f5}
+.skill-plan{display:grid;grid-template-columns:1fr 1fr;gap:4px 16px;margin:7px 0 0;padding-left:17px;color:#506d8e;font-size:11px;line-height:1.55}
+.routing-section{grid-column:1/-1}.routing-flow{display:flex;flex-wrap:wrap;gap:5px;align-items:center;margin-top:9px}.routing-flow i{color:#40a6e6;font-size:12px;font-style:normal}
+.tool-list-section{grid-column:1/-1}.skill-tool-list{display:grid;grid-template-columns:repeat(5,1fr);gap:7px;margin:8px 0 0;padding:0;list-style:none}.skill-tool-list li{display:grid;gap:3px;padding:7px;border-radius:6px;background:#edf7ff}.skill-tool-list b{color:#216196;font-family:'DM Mono',monospace;font-size:9px;font-weight:500}.skill-tool-list span{color:#7389a1;font-size:9px;line-height:1.35}
+@media(max-width:920px){.skill-preview-grid{grid-template-columns:1fr}.routing-section,.tool-list-section{grid-column:auto}.skill-tool-list{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.skill-plan{grid-template-columns:1fr}.skill-tool-list{grid-template-columns:1fr 1fr}.routing-flow{gap:4px}}
+
+.skill-showcase-heading{grid-column:1/-1;margin:40px 0 -28px}.skill-showcase-heading>span{color:#1871d4;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.11em}.skill-showcase-heading h2{margin:2px 0 0;color:#163a67;font-family:'Fraunces',Georgia,serif;font-size:clamp(31px,3.4vw,48px);font-weight:800;letter-spacing:-.055em}.hero .skill-preview{margin-top:0}
+.skill-plan.real-plan{display:block;max-width:100%;margin-top:7px;padding-left:18px}.skill-plan.real-plan li{margin-bottom:5px;padding-left:2px}.skill-plan.real-plan li:last-child{margin-bottom:0}.skill-routing-list{display:grid;gap:5px;margin:8px 0 0;padding-left:17px;color:#506d8e;font-size:11px;line-height:1.53}.skill-routing-list li{padding-left:2px}.ellipsis{color:#6684a4;font-style:italic}@media(max-width:920px){.skill-showcase-heading{margin:34px 0 -20px}}@media(max-width:600px){.skill-showcase-heading h2{font-size:31px}.skill-showcase-heading{margin-top:30px}.skill-plan.real-plan,.skill-routing-list{font-size:10px}}
+
+/* Separate the full skill artifact from the concise project-introduction screen. */
+.hero{min-height:auto;padding-top:150px;padding-bottom:116px}.skill-showcase-section{background:linear-gradient(135deg,#f3faff,#eef3ff 55%,#fbfdff);min-height:100vh}.skill-showcase-section .skill-showcase-heading{margin:0 0 25px}.skill-showcase-section .skill-preview{margin-top:0}.skill-showcase-section .skill-preview header{background:transparent}@media(max-width:920px){.hero{min-height:auto;padding-top:118px;padding-bottom:78px}.skill-showcase-section{min-height:auto}.skill-showcase-section .skill-showcase-heading{margin-bottom:20px}}@media(max-width:600px){.hero{padding-bottom:66px}}

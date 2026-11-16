@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="SkillEarth: reusable and evolvable skills for tool-driven geospatial intelligence." />
+    <title>SkillEarth — Skills for Earth Intelligence</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Fraunces:opsz,wght@9..144,600;9..144,700;9..144,800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css?v=20261116-globe3" />
+    <link rel="stylesheet" href="navigation.css?v=20261116-brand-seals" />
+    <link rel="stylesheet" href="polish.css" />
+    <link rel="stylesheet" href="skill-card.css" />
+    <link rel="stylesheet" href="comparison.css?v=20261116-header-manrope" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="top-brand" href="#top" aria-label="SkillEarth home"><img class="brand-logo" src="assets/SkillEarth-t.png" alt="SkillEarth" /><span class="brand-rule" aria-hidden="true"></span><span class="brand-seals"><img src="assets/thu-emblem.png" alt="Tsinghua University" title="Tsinghua University" /><img src="assets/dut-emblem.png" alt="Dalian University of Technology" title="Dalian University of Technology" /></span></a>
+      <nav class="top-nav" aria-label="Primary navigation">
+        <a class="nav-link active" href="#introduction">Introduction</a>
+        <a class="nav-link" href="#framework">Framework</a>
+        <a class="nav-link" href="#generalization">Generalization</a>
+        <a class="nav-link" href="#transfer">Transferability</a>
+        <a class="nav-link" href="#citation">Citation</a>
+      </nav>
+      <button id="menuButton" aria-expanded="false" aria-controls="mobileMenu">Menu</button>
+    </header>
+    <aside id="floatToc" class="float-toc" aria-label="Section navigation">
+      <span>ON THIS PAGE</span>
+      <nav>
+        <a class="nav-link active" href="#introduction">Introduction</a>
+        <a class="nav-link" href="#framework">Framework</a>
+        <a class="nav-link" href="#generalization">Generalization</a>
+        <a class="nav-link" href="#transfer">Transferability</a>
+        <a class="nav-link" href="#citation">Citation</a>
+      </nav>
+    </aside>
+    <nav id="mobileMenu" class="mobile-menu" aria-label="Mobile navigation">
+      <a href="#framework">Framework</a><a href="#generalization">Generalization</a><a href="#transfer">Transferability</a><a href="#citation">Citation</a>
+    </nav>
+
+    <main id="top">
+      <section class="paper-hero section-shell">
+        <div class="paper-orbit orbit-one"></div><div class="paper-orbit orbit-two"></div>
+        <img class="earth-ghost" src="assets/earth-wireframe.svg" alt="" aria-hidden="true" />
+        <h1><span class="title-line">Teaching General-Purpose Agents</span><span class="title-line">to Act on <span class="earth-accent">Earth</span><span class="title-via">via</span><span class="title-accent">Skill</span> Evolution</span></h1>
+        <p class="paper-tagline">A Self-evolving Skill Framework for Tool-Driven Geospatial Intelligence</p>
+        <div class="paper-authors">
+          <div><b>Haojun Tang</b><sup>1,2</sup> · <b>Wenda Zhao</b><sup>2,✉</sup> · <b>Xiang Zhou</b><sup>2</sup> · <b>Qiwei Lin</b><sup>3</sup> · <b>Lida Huang</b><sup>1</sup> · <b>Yan Wang</b><sup>1,✉</sup></div>
+          <p class="paper-affiliations"><span><sup>1</sup> Institute for AI Industry Research (AIR), Tsinghua University</span><span><sup>2</sup> Dalian University of Technology</span><span><sup>3</sup> Beijing Institute of Radio Measurement</span></p>
+          <small>✉ Corresponding authors</small>
+        </div>
+        <div class="paper-actions">
+          <a class="paper-button arxiv-button" href="https://arxiv.org/abs/2611.15481" target="_blank" rel="noreferrer"><img src="https://cdn.simpleicons.org/arxiv/B31B1B" alt="arXiv" /> <span>Read the Paper</span><b>arXiv ↗</b></a>
+          <a class="paper-button github-button" href="https://github.com/XinR-Tang/SkillEarth" target="_blank" rel="noreferrer"><img src="https://cdn.simpleicons.org/github/FFFFFF" alt="GitHub" /> <span>Explore the Code</span><b>GitHub ↗</b></a>
+          <a class="paper-button skillbank-button" href="https://huggingface.co/XinRan-Tang/skillbank-oea" target="_blank" rel="noreferrer"><img src="https://huggingface.co/front/assets/huggingface_logo-noborder.svg" alt="Hugging Face" /> <span>OEA SkillBank</span><b>🤗 ↗</b></a>
+          <a class="paper-button skillbank-button" href="https://huggingface.co/XinRan-Tang/skillbank-eb" target="_blank" rel="noreferrer"><img src="https://huggingface.co/front/assets/huggingface_logo-noborder.svg" alt="Hugging Face" /> <span>EB SkillBank</span><b>🤗 ↗</b></a>
+        </div>
+      </section>
+
+      <section id="introduction" class="hero section-shell">
+        <div class="hero-grid"></div>
+        <div class="aurora aurora-one"></div><div class="aurora aurora-two"></div>
+        <div class="hero-copy-block">
+          <p class="eyebrow">SKILLEARTH · TOOL-DRIVEN GEOSPATIAL INTELLIGENCE</p>
+          <h1>From trajectories to<br /><em>evolvable Earth skills.</em></h1>
+          <p class="hero-copy">SkillEarth converts demonstrated remote-sensing tool trajectories into reusable skills that guide general-purpose agents to plan, execute, and improve geospatial workflows—without retraining the model.</p>
+        </div>
+        <div class="hero-metrics">
+          <div><strong>+21.69</strong><span>pp · largest E2E metric gain</span></div>
+          <div><strong>3.18×</strong><span>Qwen3 General Accuracy</span></div>
+          <div><strong>7 / 7</strong><span>backbones improve in macro E2E</span></div>
+        </div>
+        <a class="scroll-cue" href="#framework"><span></span> Explore the framework</a>
+      </section>
+
+      <section id="skill-example" class="skill-showcase-section section-shell reveal">
+        <div class="skill-showcase-heading"><span>CONCRETE ARTIFACT</span><h2>What a skill looks like?</h2></div>
+        <article class="skill-preview">
+          <header><div><span>EXTRACTED SKILL</span><h3>nbr-burn-severity-and-regrowth-change-analysis</h3></div><a href="https://huggingface.co/XinRan-Tang/skillbank-oea" target="_blank" rel="noreferrer">Released SkillBank ↗</a></header>
+          <div class="skill-preview-grid">
+            <section><span class="skill-label">WHEN TO USE</span><p>Use when a user requests a visual analysis of burn severity and vegetation recovery changes over time using normalized burn ratio (NBR) index differences, requiring classification of low, moderate, severe burn, unburned, and enhanced regrowth areas.</p></section>
+            <section><span class="skill-label">PLAN</span><ol class="skill-plan real-plan"><li>Call <code>GetAreaBoundary</code> with the specified geographic region to define the study area and generate a geopackage file that serves as the shared workspace.</li><li>Call <code>AddIndexLayer</code> with NBR and the first date to compute and store the baseline NBR raster layer.</li><li>Call <code>AddIndexLayer</code> a second time with a different month to compute the later NBR raster layer.</li><li>Call <code>ComputeIndexChange</code> with the two distinct NBR layers to classify burn severity and regrowth patterns.</li><li class="ellipsis">… Call <code>ShowIndexLayer</code>, then terminate only after the preview and base layers are successfully generated.</li></ol></section>
+            <section class="routing-section"><span class="skill-label">GROUNDED OBSERVATION ROUTING</span><ul class="skill-routing-list"><li>Use the <code>gpkg</code> output from <code>GetAreaBoundary</code> to provide the <code>gpkg</code> argument for both <code>AddIndexLayer</code> calls.</li><li>Use the <code>gpkg</code> output from <code>GetAreaBoundary</code> to provide the <code>gpkg</code> argument for <code>ComputeIndexChange</code> and <code>ShowIndexLayer</code>.</li><li>Use the <code>layer_name</code> outputs from <code>AddIndexLayer</code> to provide <code>layer1_name</code> and <code>layer2_name</code> for <code>ComputeIndexChange</code>.</li><li>Use the <code>diff_layer_name</code> output from <code>ComputeIndexChange</code> to provide the <code>layer_name</code> argument for <code>ShowIndexLayer</code>.</li><li class="ellipsis">… Use the text output from <code>ShowIndexLayer</code> as evidence for the <code>ans</code> argument of <code>Terminate</code>.</li></ul></section>
+            <section class="tool-list-section"><span class="skill-label">TOOL LIST</span><ul class="skill-tool-list"><li><b>GetAreaBoundary</b><span>area, buffer_m</span></li><li><b>AddIndexLayer</b><span>gpkg, index_type, layer_name, year, month</span></li><li><b>ComputeIndexChange</b><span>gpkg, index_type, layer1_name, layer2_name, diff_layer_name</span></li><li><b>ShowIndexLayer</b><span>gpkg, index_type, layer_name</span></li><li><b>Terminate</b><span>ans</span></li></ul></section>
+          </div>
+        </article>
+      </section>
+
+      <section id="framework" class="section-shell framework-section reveal">
+        <div class="section-kicker"><span>01</span> Framework</div>
+        <div class="section-heading split-heading">
+          <h2>Teach agents to act<br />on Earth—<em>once and again.</em></h2>
+          <p>Geospatial tasks often require long, brittle chains of tool use. SkillEarth preserves what works in those trajectories as modular, retrievable skills that can improve future executions.</p>
+        </div>
+        <div class="lifecycle">
+          <article><span class="stage-index">01</span><h3>Skill Extraction</h3><p>Extract controllable, reusable skills from the components of demonstrated tool trajectories.</p></article>
+          <div class="arrow">→</div>
+          <article><span class="stage-index">02</span><h3>Skill Evolution</h3><p>Use dual-judge feedback and a GOR graph for grounded, fine-grained skill refinement.</p></article>
+          <div class="arrow">→</div>
+          <article><span class="stage-index">03</span><h3>Skill Decision</h3><p>Decide whether each evolved skill should be added, merged into the bank, or discarded.</p></article>
+        </div>
+        <figure class="figure-card"><img src="assets/framework.png" alt="Overview of the SkillEarth framework" /><figcaption><b>Figure 1.</b> SkillEarth extracts, evolves, and retrieves skills to guide tool-driven Earth intelligence.</figcaption></figure>
+      </section>
+
+      <section id="generalization" class="section-shell blue-section reveal">
+        <div class="section-kicker light"><span>02</span> Generalization</div>
+        <div class="section-heading split-heading light">
+          <h2>Skill guidance generalizes<br />across <em>seven LLMs.</em></h2>
+          <p>Across three frontier and four open-source models, SkillEarth improves the macro-average of all nine <span class="nobreak">OpenEarth-Bench</span> <span class="nobreak">end-to-end</span> metrics from <b>29.66</b> to <b>37.36</b>.</p>
+        </div>
+        <div class="insight-strip">
+          <div><span>Macro-average E2E</span><strong>+7.70 <small>pp</small></strong><p>25.96% relative improvement across nine metrics.</p></div>
+          <div><span>Largest model gain</span><strong>+12.64 <small>pp</small></strong><p>Qwen3-4B-Instruct, a 4B open-weight model.</p></div>
+          <div><span>Coverage</span><strong>7 / 7</strong><p>All evaluated models improve in macro E2E score.</p></div>
+        </div>
+        <div class="chart-card" id="generalizationChart" aria-label="End-to-end performance chart"></div>
+        <p class="chart-note">End-to-end macro score is the unweighted mean of Per., Op., Logic., GIS., AnyOr., SameO., Uni., Ans., and Gen. Values are derived from the paper’s OpenEarth-Bench table.</p>
+        <details class="results-disclosure">
+          <summary>
+            <span class="disclosure-icon" aria-hidden="true">▥</span>
+            <span class="disclosure-copy"><small>TABLE · HIDDEN BY DEFAULT</small><strong><span class="explore-accent">Explore</span> end-to-end task performance, model by model.</strong><p>All seven backbones, without/with SkillEarth macro scores, and per-model gains.</p></span>
+            <span class="disclosure-control"><span class="expand-label">Click to expand</span><span class="collapse-label">Click to collapse</span><b aria-hidden="true">⌄</b></span>
+          </summary>
+          <div class="disclosure-content">
+            <div class="results-table-wrap disclosure-table"><table id="resultsTable"><thead><tr><th>Backbone</th><th>Family</th><th>Without skill</th><th>With SkillEarth</th><th>Δ macro E2E</th></tr></thead><tbody></tbody></table></div>
+            <div class="results-footnote">Each value is the macro-average across nine end-to-end OpenEarth-Bench metrics. The full per-metric results and evaluation trajectories are available in the project repository.</div>
+          </div>
+        </details>
+      </section>
+
+      <section id="transfer" class="section-shell transfer-section reveal">
+        <div class="section-kicker"><span>03</span> Transferability</div>
+        <div class="section-heading split-heading">
+          <h2>Skills transfer across<br /><em>model families.</em></h2>
+          <p>A SkillBank is not tied to the model that extracted it. Transferred skills improve the <span class="nobreak">end-to-end</span> general accuracy of both <span class="nobreak">Qwen3-4B-Instruct</span> and <span class="nobreak">DeepSeek-V4-Flash</span>.</p>
+        </div>
+        <div class="transfer-summary">
+          <div class="transfer-hero-stat"><span>Best cross-model lift</span><strong>+15.86 <small>pp</small></strong><p>General accuracy for Qwen3-4B-Instruct using skills extracted by Doubao-Seed-2.0-Mini.</p></div>
+          <div class="transfer-legend"><i class="baseline-dot"></i> without skill <i class="skill-dot"></i> with transferred skill</div>
+        </div>
+        <div class="transfer-board" id="transferChart" aria-label="Cross-model transfer chart"></div>
+        <p class="chart-note">Bars report the <b>Gen.</b> end-to-end accuracy from the cross-model transfer experiments. The colored source cards identify the model used to construct the transferred SkillBank.</p>
+        <div class="comparison-intro"><span>FULL BENCHMARK COMPARISONS</span><h3>How does SkillEarth compare with state-of-the-art methods?</h3><p>Complete results against state-of-the-art remote-sensing agents and skill-extraction methods on both OpenEarth-Bench and Earth-Bench.</p></div>
+        <div class="comparison-grid">
+          <article class="comparison-card">
+            <header><span>OPENEARTH-BENCH · TABLE 1</span><h3>Remote-sensing agents</h3><p>Qwen3-4B-Instruct · EP: expert priors · FT: fine-tuning</p></header>
+            <div class="comparison-table-wrap"><table class="comparison-table oea-table">
+            <thead><tr><th rowspan="2">Method</th><th rowspan="2">EP</th><th rowspan="2">FT</th><th colspan="5">Step-by-Step</th><th colspan="9">End-to-End</th></tr><tr><th>Ins. ↑</th><th>Tool. ↑</th><th>ArgN. ↑</th><th>ArgV. ↑</th><th>Summ. ↑</th><th>Per. ↑</th><th>Op. ↑</th><th>Logic. ↑</th><th>GIS. ↑</th><th>AnyOr. ↑</th><th>SameO. ↑</th><th>Uni. ↑</th><th>Ans. ↑</th><th>Gen. ↑</th></tr></thead>
+            <tbody>
+            <tr><th>OpenEarthAgent</th><td>✗</td><td>✗</td><td>97.34</td><td>86.94</td><td>84.12</td><td class="rank-blue">33.55</td><td>83.28</td><td>13.86</td><td class="rank-blue">20.95</td><td class="rank-orange">18.35</td><td class="rank-blue">71.82</td><td class="rank-blue">16.00</td><td class="rank-blue">14.71</td><td class="rank-blue">21.47</td><td class="rank-orange">13.72</td><td>15.86</td></tr>
+            <tr><th>Earth-Agent</th><td>✗</td><td>✗</td><td class="rank-blue">99.98</td><td class="rank-blue">90.84</td><td class="rank-red">87.31</td><td class="rank-orange">33.37</td><td class="rank-blue">88.70</td><td class="rank-blue">31.26</td><td>14.67</td><td>11.94</td><td>51.58</td><td>2.48</td><td>2.31</td><td>4.19</td><td>12.82</td><td>19.31</td></tr>
+            <tr><th>RSMeM</th><td>✓</td><td>✗</td><td class="rank-orange">99.20</td><td class="rank-orange">87.97</td><td class="rank-orange">85.06</td><td>33.05</td><td>84.92</td><td class="rank-orange">31.20</td><td>7.78</td><td>15.08</td><td class="rank-orange">53.56</td><td class="rank-orange">9.41</td><td class="rank-orange">8.98</td><td class="rank-orange">11.46</td><td class="rank-blue">18.19</td><td class="rank-blue">33.10</td></tr>
+            <tr><th>RS-Agent</th><td>✓</td><td>✗</td><td class="rank-red">100.00</td><td>43.66</td><td>40.17</td><td>11.04</td><td class="rank-orange">88.31</td><td>28.52</td><td class="rank-orange">19.67</td><td class="rank-blue">18.72</td><td>12.67</td><td>3.93</td><td>3.93</td><td>5.82</td><td>9.46</td><td class="rank-red">37.93</td></tr>
+            <tr class="skillearth-row"><th>SkillEarth</th><td>✗</td><td>✗</td><td>99.07</td><td class="rank-red">91.04</td><td class="rank-blue">86.48</td><td class="rank-red">36.17</td><td class="rank-red">92.67</td><td class="rank-red">35.00</td><td class="rank-red">33.06</td><td class="rank-red">28.73</td><td class="rank-red">81.85</td><td class="rank-red">25.32</td><td class="rank-red">25.15</td><td class="rank-red">27.89</td><td class="rank-red">19.59</td><td class="rank-orange">24.14</td></tr>
+            </tbody></table></div>
+          </article>
+          <article class="comparison-card">
+            <header><span>EARTH-BENCH · TABLE 2</span><h3>Remote-sensing agents</h3><p>Qwen3-4B-Instruct · EP: expert priors · FT: fine-tuning · AP and IF settings</p></header>
+            <div class="comparison-table-wrap"><table class="comparison-table eb-table">
+            <thead><tr><th rowspan="3">Method</th><th rowspan="3">EP</th><th rowspan="3">FT</th><th colspan="6">Automatic Planning (AP)</th><th colspan="6">Instruction Following (IF)</th></tr><tr><th colspan="4">Step-by-Step</th><th colspan="2">End-to-End</th><th colspan="4">Step-by-Step</th><th colspan="2">End-to-End</th></tr><tr><th>AnyOr. ↑</th><th>InOr. ↑</th><th>Exact. ↑</th><th>Param. ↑</th><th>Eff. ↓</th><th>Acc. ↑</th><th>AnyOr. ↑</th><th>InOr. ↑</th><th>Exact. ↑</th><th>Param. ↑</th><th>Eff. ↓</th><th>Acc. ↑</th></tr></thead>
+            <tbody>
+            <tr><th>OpenEarthAgent</th><td>✗</td><td>✗</td><td>46.55</td><td class="rank-orange">39.01</td><td class="rank-orange">28.59</td><td class="rank-orange">18.98</td><td>2.7099</td><td>18.15</td><td class="rank-orange">50.21</td><td class="rank-orange">41.68</td><td class="rank-orange">30.75</td><td class="rank-orange">20.75</td><td>2.7778</td><td>19.76</td></tr>
+            <tr><th>Earth-Agent</th><td>✗</td><td>✗</td><td>20.47</td><td>1.32</td><td>0.00</td><td>0.00</td><td>3.9747</td><td>15.73</td><td>29.69</td><td>10.89</td><td>8.63</td><td>4.21</td><td>5.4554</td><td>10.08</td></tr>
+            <tr><th>RSMeM</th><td>✓</td><td>✗</td><td class="rank-orange">50.43</td><td>33.25</td><td>7.68</td><td>7.51</td><td class="rank-red">1.1703</td><td>21.46</td><td>40.72</td><td>23.27</td><td>13.93</td><td>1.16</td><td class="rank-red">0.4839</td><td>21.46</td></tr>
+            <tr><th>HiRS-Agent</th><td>✓</td><td>✓</td><td class="rank-blue">50.95</td><td class="rank-blue">41.10</td><td class="rank-blue">31.67</td><td class="rank-blue">19.54</td><td>2.5059</td><td class="rank-red">43.95</td><td class="rank-blue">53.79</td><td class="rank-blue">46.34</td><td class="rank-blue">34.64</td><td class="rank-blue">20.81</td><td>3.3013</td><td class="rank-red">45.56</td></tr>
+            <tr><th>RS-Agent</th><td>✓</td><td>✗</td><td>22.68</td><td>15.84</td><td>15.17</td><td>8.90</td><td class="rank-orange">2.3385</td><td class="rank-blue">29.44</td><td>27.25</td><td>18.61</td><td>17.74</td><td>9.18</td><td class="rank-orange">2.2295</td><td class="rank-blue">33.06</td></tr>
+            <tr class="skillearth-row"><th>SkillEarth</th><td>✗</td><td>✗</td><td class="rank-red">53.17</td><td class="rank-red">43.24</td><td class="rank-red">35.42</td><td class="rank-red">22.54</td><td class="rank-blue">1.8659</td><td class="rank-orange">22.98</td><td class="rank-red">60.18</td><td class="rank-red">51.38</td><td class="rank-red">47.64</td><td class="rank-red">28.24</td><td class="rank-blue">1.9647</td><td class="rank-orange">26.61</td></tr>
+            </tbody></table></div>
+          </article>
+          <article class="comparison-card">
+            <header><span>OPENEARTH-BENCH · TABLE 3</span><h3>Skill-extraction methods</h3><p>Qwen3-4B-Instruct · shared evaluation protocol</p></header>
+            <div class="comparison-table-wrap"><table class="comparison-table oea-table">
+            <thead><tr><th rowspan="2">Method</th><th colspan="5">Step-by-Step</th><th colspan="9">End-to-End</th></tr><tr><th>Ins. ↑</th><th>Tool. ↑</th><th>ArgN. ↑</th><th>ArgV. ↑</th><th>Summ. ↑</th><th>Per. ↑</th><th>Op. ↑</th><th>Logic. ↑</th><th>GIS. ↑</th><th>AnyOr. ↑</th><th>SameO. ↑</th><th>Uni. ↑</th><th>Ans. ↑</th><th>Gen. ↑</th></tr></thead>
+            <tbody>
+            <tr><th>Trace2Skill</th><td class="rank-orange">98.88</td><td class="rank-orange">89.89</td><td class="rank-orange">85.61</td><td class="rank-blue">36.35</td><td>84.43</td><td>13.21</td><td class="rank-blue">30.56</td><td class="rank-blue">22.97</td><td class="rank-orange">40.33</td><td>2.40</td><td>2.40</td><td>3.51</td><td class="rank-orange">9.67</td><td class="rank-orange">14.48</td></tr>
+            <tr><th>AutoSkill</th><td>98.78</td><td>83.60</td><td>79.61</td><td class="rank-red">38.35</td><td class="rank-blue">87.31</td><td class="rank-blue">17.97</td><td>24.88</td><td>20.02</td><td>35.96</td><td class="rank-orange">3.85</td><td class="rank-orange">3.76</td><td class="rank-orange">4.96</td><td>8.31</td><td>9.66</td></tr>
+            <tr><th>SkillX</th><td class="rank-blue">99.03</td><td class="rank-blue">90.37</td><td class="rank-blue">85.62</td><td>34.19</td><td class="rank-orange">84.68</td><td class="rank-orange">15.80</td><td class="rank-orange">29.72</td><td>20.12</td><td class="rank-blue">72.62</td><td class="rank-blue">17.11</td><td class="rank-blue">16.77</td><td class="rank-blue">20.87</td><td class="rank-red">20.12</td><td class="rank-blue">17.24</td></tr>
+            <tr><th>SkillRevise</th><td>98.51</td><td>88.30</td><td>84.07</td><td>33.60</td><td>83.83</td><td>13.50</td><td>25.26</td><td class="rank-orange">21.31</td><td>35.50</td><td>2.40</td><td>2.22</td><td>3.25</td><td>6.63</td><td class="rank-orange">14.48</td></tr>
+            <tr class="skillearth-row"><th>SkillEarth</th><td class="rank-red">99.07</td><td class="rank-red">91.04</td><td class="rank-red">86.48</td><td class="rank-orange">36.17</td><td class="rank-red">92.67</td><td class="rank-red">35.00</td><td class="rank-red">33.06</td><td class="rank-red">28.73</td><td class="rank-red">81.85</td><td class="rank-red">25.32</td><td class="rank-red">25.15</td><td class="rank-red">27.89</td><td class="rank-blue">19.59</td><td class="rank-red">24.14</td></tr>
+            </tbody></table></div>
+          </article>
+          <article class="comparison-card">
+            <header><span>EARTH-BENCH · TABLE 4</span><h3>Skill-extraction methods</h3><p>Qwen3-4B-Instruct · AP: automatic planning · IF: instruction following</p></header>
+            <div class="comparison-table-wrap"><table class="comparison-table eb-table">
+            <thead><tr><th rowspan="3">Method</th><th colspan="6">Automatic Planning (AP)</th><th colspan="6">Instruction Following (IF)</th></tr><tr><th colspan="4">Step-by-Step</th><th colspan="2">End-to-End</th><th colspan="4">Step-by-Step</th><th colspan="2">End-to-End</th></tr><tr><th>AnyOr. ↑</th><th>InOr. ↑</th><th>Exact. ↑</th><th>Param. ↑</th><th>Eff. ↓</th><th>Acc. ↑</th><th>AnyOr. ↑</th><th>InOr. ↑</th><th>Exact. ↑</th><th>Param. ↑</th><th>Eff. ↓</th><th>Acc. ↑</th></tr></thead>
+            <tbody>
+            <tr><th>Trace2Skill</th><td>46.14</td><td>33.03</td><td class="rank-orange">26.34</td><td class="rank-orange">20.48</td><td>1.8854</td><td class="rank-orange">20.81</td><td class="rank-orange">49.55</td><td class="rank-orange">39.39</td><td class="rank-orange">32.53</td><td class="rank-orange">24.29</td><td>2.0532</td><td class="rank-blue">24.60</td></tr>
+            <tr><th>AutoSkill</th><td>43.56</td><td>28.63</td><td>17.21</td><td>13.12</td><td class="rank-red">1.6711</td><td>18.55</td><td>48.34</td><td>35.44</td><td>25.52</td><td>18.01</td><td class="rank-blue">1.8344</td><td>22.18</td></tr>
+            <tr><th>SkillX</th><td class="rank-blue">51.54</td><td class="rank-blue">42.95</td><td class="rank-blue">33.43</td><td class="rank-blue">20.66</td><td>1.9922</td><td>20.19</td><td class="rank-blue">58.00</td><td class="rank-blue">48.87</td><td class="rank-blue">44.17</td><td class="rank-blue">27.27</td><td>1.9772</td><td>18.15</td></tr>
+            <tr><th>SkillRevise</th><td class="rank-orange">46.42</td><td class="rank-orange">34.68</td><td>24.93</td><td>19.22</td><td class="rank-blue">1.7609</td><td class="rank-blue">22.18</td><td>47.65</td><td>35.79</td><td>30.03</td><td>21.86</td><td class="rank-red">1.8034</td><td class="rank-orange">22.58</td></tr>
+            <tr class="skillearth-row"><th>SkillEarth</th><td class="rank-red">53.17</td><td class="rank-red">43.24</td><td class="rank-red">35.42</td><td class="rank-red">22.54</td><td class="rank-orange">1.8659</td><td class="rank-red">22.98</td><td class="rank-red">60.18</td><td class="rank-red">51.38</td><td class="rank-red">47.64</td><td class="rank-red">28.24</td><td class="rank-orange">1.9647</td><td class="rank-red">26.61</td></tr>
+            </tbody></table></div>
+          </article>
+        </div>
+        <p class="comparison-note">Top three results in each column are highlighted in <b class="rk-red">red</b>, <b class="rk-blue">blue</b>, and <b class="rk-orange">orange</b>.</p>
+      </section>
+
+      <section id="citation" class="section-shell citation-section reveal">
+        <div><div class="section-kicker"><span>04</span> Citation</div><h2>Build agents that<br /><em>learn to act on Earth.</em></h2><p>Explore the paper, reproducible evaluation results, and released SkillBanks.</p></div>
+        <div class="citation-card"><pre>@misc{tang2026skillearth,
+  title  = {SkillEarth: Teaching General-Purpose
+            Agents to Act on Earth via Skill Evolution},
+  author = {Haojun Tang and Wenda Zhao and others},
+  year   = {2026},
+  eprint = {2611.15481}
+}</pre><button id="copyCitation">Copy BibTeX</button></div>
+      </section>
+      <footer><span>SkillEarth © 2026</span><span>Built for geospatial agents · <a href="https://github.com/XinR-Tang/SkillEarth" target="_blank" rel="noreferrer">GitHub</a></span></footer>
+    </main>
+    <script src="script.js?v=20261116-globe3"></script>
+  </body>
+</html>
