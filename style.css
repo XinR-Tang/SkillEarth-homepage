@@ -13,3 +13,10 @@
 .earth-layer img{position:absolute;top:-110px;right:-150px;width:min(56vw,620px);opacity:.13;user-select:none}
 .earth-layer.is-left img{right:auto;left:-160px;top:auto;bottom:-130px}
 .citation-section .earth-layer img{opacity:.26;filter:brightness(2.4)}
+
+/* Keep the hero's ambient glows inside the hero so they never wash the next section. */
+.hero{overflow:hidden}
+.hero .aurora{opacity:.5}
+.hero .aurora-two{bottom:-30px;right:6%;width:620px;height:380px;
+  -webkit-mask-image:linear-gradient(to bottom,rgba(0,0,0,.85) 40%,transparent 88%);
+  mask-image:linear-gradient(to bottom,rgba(0,0,0,.85) 40%,transparent 88%)}
