@@ -1,0 +1,17 @@
+name: Publish site to gh-pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Mirror main to the published branch
+        run: git push --force origin HEAD:gh-pages
